@@ -15,7 +15,7 @@ const App = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setHeroCount((count) => (count === 2 ? 0 : count + 1));
-    }, 5000);
+    }, 7000);
 
     return () => clearInterval(intervalId);
   }, []);

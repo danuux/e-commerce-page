@@ -2,6 +2,7 @@ import "./Hero.css";
 import arrow_btn from "../../assets/arrow_btn.png";
 import play_icon from "../../assets/play_icon.png";
 import pause_icon from "../../assets/pause_icon.png";
+
 const Hero = ({
   heroData,
   setHeroCount,
@@ -11,16 +12,30 @@ const Hero = ({
 }) => {
   return (
     <div className="hero">
-      <div className="hero-text">
+      {}
+      <div
+        className="hero-text"
+        style={{ visibility: playStatus ? "hidden" : "visible" }}
+      >
         <p>{heroData.text1}</p>
         <p>{heroData.text2}</p>
       </div>
-      <div className="hero-explore">
+
+      {}
+      <div
+        className="hero-explore"
+        style={{ visibility: playStatus ? "hidden" : "visible" }}
+      >
         <p>Explore the features</p>
-        <img src={arrow_btn} alt="" />
+        <img src={arrow_btn} alt="Explore arrow button" />
       </div>
+
+      {}
       <div className="hero-dot-play">
-        <ul className="hero-dots">
+        <ul
+          className="hero-dots"
+          style={{ visibility: playStatus ? "hidden" : "visible" }}
+        >
           <li
             onClick={() => setHeroCount(0)}
             className={heroCount === 0 ? "hero-dot orange" : "hero-dot"}
@@ -34,11 +49,13 @@ const Hero = ({
             className={heroCount === 2 ? "hero-dot orange" : "hero-dot"}
           ></li>
         </ul>
+
+        {}
         <div className="hero-play">
           <img
             onClick={() => setPlayStatus(!playStatus)}
             src={playStatus ? pause_icon : play_icon}
-            alt=""
+            alt={playStatus ? "Pause icon" : "Play icon"}
           />
           <p>See the video</p>
         </div>
